@@ -9,11 +9,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {NgxElectronModule} from 'ngx-electron';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainToolbarComponent
+    MainToolbarComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import {NgxElectronModule} from 'ngx-electron';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    NgxElectronModule
+    NgxElectronModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
