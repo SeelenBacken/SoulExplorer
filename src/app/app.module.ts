@@ -11,12 +11,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {NgxElectronModule} from 'ngx-electron';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LibraryComponent } from './library/library.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainToolbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    SettingsComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,

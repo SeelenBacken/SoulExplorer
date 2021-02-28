@@ -1,0 +1,20 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="toggle">
+    <button mat-button type="button" class="viewButton" (click)="setView('library')">
+      <mat-icon>home</mat-icon>
+      <span class="buttonLabel">Library</span>
+    </button> <br>
+    <button mat-button type="button" class="viewButton" (click)="setView('settings')">
+      <mat-icon>settings</mat-icon>
+      <span class="buttonLabel">Settings</span>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content [ngSwitch]="view">
+    <app-library *ngSwitchCase="'library'"></app-library>
+    <app-settings *ngSwitchCase="'settings'"></app-settings>
+    <div *ngSwitchDefault>
+      Fehler
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

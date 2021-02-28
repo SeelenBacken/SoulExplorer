@@ -1,0 +1,16 @@
+mat-sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  width: auto;
+}
+
+.buttonLabel {
+  padding-left: 1em;
+}
+
+.viewButton {
+  width: 100%;
+  display: inline-flex;
+}

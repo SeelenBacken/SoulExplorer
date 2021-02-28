@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'SoulExplorer';
   toggleSidenav = false;
+  view = 'library';
 
   sideNavToggle(): void {
     this.toggleSidenav = !this.toggleSidenav;
