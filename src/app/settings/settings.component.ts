@@ -1,4 +1,4 @@
-import {Component, EventEmitter, NgZone, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, NgZone, OnInit, Output} from '@angular/core';
 import {ElectronService} from 'ngx-electron';
 import {IpcRenderer} from 'electron';
 import {Folder} from '../types';
@@ -11,6 +11,7 @@ import {Folder} from '../types';
 export class SettingsComponent implements OnInit {
 
   @Output() steamGames: EventEmitter<Folder[]> = new EventEmitter();
+  @Input() LibraryPaths: string[];
 
   public steamFolders: Folder[];
   public renderer: IpcRenderer;
