@@ -3,6 +3,7 @@
 [![Windows Build](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/windows.yml/badge.svg)](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/windows.yml)
 [![Linux Build](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/ubuntu.yml)
 [![MacOS Build](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/macos.yml/badge.svg)](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/macos.yml)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/SeelenBacken/SoulExplorer/master?style=plastic)](https://scrutinizer-ci.com/g/SeelenBacken/SoulExplorer/?branch=master)
 
 A (wannabe) Game Library App.
 
