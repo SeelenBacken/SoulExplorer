@@ -6,8 +6,10 @@ const ipcMain = electron.ipcMain;
 const path = require('path')
 const url = require('url')
 const glob = require("glob");
+const fs = require("fs");
 
 let mainWindow
+let steamConfigPath = process.env.APPDATA + '/SoulExplorer/steamGames.config'
 
 let getSteamGames = function (src, callback) {
   glob(src + '/steamapps/common/*', callback);
@@ -18,6 +20,9 @@ let checkGame = function (src, callback) {
 }
 
 function createWindow () {
+
+  initSave();
+
   mainWindow = new BrowserWindow({
     width: 1600,
     height: 1200,
@@ -54,6 +59,20 @@ app.on('activate', function () {
   }
 })
 
+function initSave() {
+  let dir = process.env.APPDATA + '/SoulExplorer';
+  try {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+      console.log('Save Directory created')
+    } else {
+      console.log('Save Directory already exists')
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 ipcMain.on('exit', (event, args) => {
   mainWindow.close();
 })
@@ -89,6 +108,22 @@ ipcMain.on('scanSteamLibraries', (event, args) => {
       event.sender.send('scannedSteamLibraries', value);
     }
   );
+})
+
+ipcMain.on('saveSteamLibrary', (event, args) => {
+  /*if(!fs.existsSync(steamConfigPath)) {
+    fs.writeFileSync(steamConfigPath, [])
+  }*/
+  let libraries = JSON.stringify(args);
+  fs.writeFileSync(steamConfigPath, libraries);
+})
+
+ipcMain.on('loadSteamLibraries', (event, args) => {
+  if (fs.existsSync(steamConfigPath)) {
+    let configFile = fs.readFileSync(steamConfigPath);
+    let libraries = JSON.parse(configFile);
+    event.sender.send('setSteamLibraries', libraries);
+  }
 })
 
 function checkSteamGame(game) {
