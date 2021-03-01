@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Folder} from '../types';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,6 +9,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class SidenavComponent implements OnInit {
 
   @Input() toggle: boolean;
+  steamGames: Folder[] = [];
   view = 'library';
 
   constructor() {
@@ -20,4 +22,7 @@ export class SidenavComponent implements OnInit {
     this.view = view;
   }
 
+  setSteamGames(games: Folder[]): void {
+    this.steamGames = games;
+  }
 }

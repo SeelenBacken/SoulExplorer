@@ -1,6 +1,6 @@
 {
   "name": "soul-explorer",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~11.2.3",
     "@angular/router": "~11.2.3",
     "electron-packager": "^15.2.0",
+    "glob": "^7.1.6",
     "karma-electron": "^6.3.3",
     "ngx-electron": "^2.2.0",
     "rxjs": "~6.6.0",

@@ -12,7 +12,7 @@
 
   <mat-sidenav-content [ngSwitch]="view">
     <app-library *ngSwitchCase="'library'"></app-library>
-    <app-settings *ngSwitchCase="'settings'"></app-settings>
+    <app-settings *ngSwitchCase="'settings'" (steamGames)="setSteamGames($event)"></app-settings>
     <div *ngSwitchDefault>
       Fehler
     </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Folder} from './types';
 
 @Component({
   selector: 'app-root',
