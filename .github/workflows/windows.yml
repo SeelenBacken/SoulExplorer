@@ -2,7 +2,7 @@
 
 name: 'Windows Build'
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -19,7 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
-    
+
     strategy:
       matrix:
         node-version: [12.x, 14.x, 15.x]
@@ -52,4 +52,6 @@ jobs:
       - name: Check lint
         run: npm run lint
       - name: Build the app
-        run: npm run start:electron
+        run: npm run build:electron
+      - name: Pack the App
+        run: npm run pack:electron
