@@ -60,3 +60,10 @@ ipcMain.on('maximize', (event, args) => {
     mainWindow.maximize();
   }
 })
+
+ipcMain.on('openNewLibrary', (event, args) => {
+  let folderPath = electron.dialog.showOpenDialogSync({
+    properties: ['openDirectory']
+  });
+  event.sender.send('addSteamLibrary', {folderPath: folderPath, folderNumber: args});
+})

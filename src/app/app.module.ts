@@ -13,6 +13,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LibraryComponent } from './library/library.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { LibraryComponent } from './library/library.component';
     MatIconModule,
     MatButtonModule,
     NgxElectronModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

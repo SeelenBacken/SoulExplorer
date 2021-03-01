@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, NgZone} from '@angular/core';
 import { IpcRenderer } from 'electron';
 import { ElectronService } from 'ngx-electron';
 

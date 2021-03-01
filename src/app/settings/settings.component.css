@@ -1,0 +1,21 @@
+.titleIcon {
+  vertical-align: middle;
+}
+
+.cardTitle {
+  padding-left: 1em;
+}
+
+.folderInput {
+  width: 100%;
+}
+
+.steamLibraryInput input {
+  float: left;
+  width: 90%;
+}
+
+.folderButton {
+  float: right;
+  display: inline;
+}
