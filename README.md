@@ -1,6 +1,6 @@
 # SoulExplorer
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/SeelenBacken/SoulExplorer?include_prereleases)
+![GitHub release (latest by date including pre-releases)](https://github.com/SeelenBacken/SoulExplorer/releases)
 [![Windows Build](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/windows.yml/badge.svg)](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/windows.yml)
 [![Linux Build](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/ubuntu.yml)
 [![MacOS Build](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/macos.yml/badge.svg)](https://github.com/SeelenBacken/SoulExplorer/actions/workflows/macos.yml)
