@@ -1,6 +1,6 @@
 {
   "name": "soul-explorer",
-  "version": "0.1.0-alpha",
+  "version": "0.1.0-alpha.1",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
