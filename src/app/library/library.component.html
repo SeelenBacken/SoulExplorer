@@ -1,1 +1,12 @@
-<p>library works!</p>
+<div class="libraryContainer">
+  <ul *ngFor="let library of steamLibrary">
+    <li *ngFor="let game of library.games">
+      <h3>{{game.name}}</h3>
+      <ul>
+        <li *ngFor="let exe of game.exes">
+          <button mat-button (click)="onExe(exe.filePath)">{{exe.label}}</button>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

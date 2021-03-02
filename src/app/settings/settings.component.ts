@@ -1,12 +1,7 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, NgZone, OnInit, Output} from '@angular/core';
 import {ElectronService} from 'ngx-electron';
 import {IpcRenderer} from 'electron';
-
-interface Folder {
-  label: string;
-  filePath: string;
-  folderSize: number;
-}
+import {Folder} from '../types';
 
 @Component({
   selector: 'app-settings',
@@ -15,7 +10,10 @@ interface Folder {
 })
 export class SettingsComponent implements OnInit {
 
-  steamFolders: Folder[];
+  @Output() steamGames: EventEmitter<Folder[]> = new EventEmitter();
+  @Input() LibraryPaths: string[];
+
+  public steamFolders: Folder[];
   public renderer: IpcRenderer;
 
   constructor(private electronServiceInstance: ElectronService, private ngZone: NgZone) {
@@ -24,7 +22,13 @@ export class SettingsComponent implements OnInit {
 
     this.renderer.on('addSteamLibrary', (event, args) => {
       this.ngZone.run(() => {
-        this.steamFolders[args.folderNumber] = {label: args.folderPath, filePath: args.folderPath, folderSize: args.folderNumber};
+        this.steamFolders[args.folderNumber - 1] = {label: args.folderPath, filePath: args.folderPath, folderSize: args.folderNumber};
+      });
+    });
+
+    this.renderer.on('scannedSteamLibraries', (event, args) => {
+      this.ngZone.run(() => {
+        this.steamGames.emit(args);
       });
     });
   }
@@ -38,6 +42,10 @@ export class SettingsComponent implements OnInit {
 
   openLibraryFolder(folderNumber: number): void {
     this.renderer.send('openNewLibrary', folderNumber);
+  }
+
+  onScanLibraries(): void {
+    this.renderer.send('scanSteamLibraries', this.steamFolders);
   }
 
 }

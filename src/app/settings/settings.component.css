@@ -2,6 +2,10 @@
   vertical-align: middle;
 }
 
+.viewContainer {
+  margin: 2em;
+}
+
 .cardTitle {
   padding-left: 1em;
 }
@@ -18,4 +22,9 @@
 .folderButton {
   float: right;
   display: inline;
+}
+
+.scanButton {
+  margin-top: 1em;
+  float: right;
 }

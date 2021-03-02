@@ -9,13 +9,13 @@
       <form class="steamForm">
         <mat-form-field *ngFor="let folder of steamFolders" class="folderInput">
           <mat-label>Steam Library Folder</mat-label>
-          <div class="steamLibraryInput">
-            <input matInput id="steamF{{folder.folderSize}}" placeholder="ex. C:\Program Files (x86)\Steam">
-          </div>
+          <input matInput name="steamF{{folder.folderSize}}" value="{{LibraryPaths[folder.folderSize-1]}}">
           <button mat-raised-button class="folderButton" type="button" (click)="openLibraryFolder(folder.folderSize)">Open Folder</button>
         </mat-form-field>
         <button mat-raised-button type="button" (click)="addNewLibrary()">Add Library</button>
       </form>
     </mat-card-content>
   </mat-card>
+
+  <button mat-raised-button type="button" class="scanButton" (click)="onScanLibraries()">Scan Libraries</button>
 </div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Folder} from '../types';
+import {ElectronService} from 'ngx-electron';
+import {IpcRenderer} from 'electron';
 
 @Component({
   selector: 'app-library',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./library.component.css']
 })
 export class LibraryComponent implements OnInit {
+  @Input() steamLibrary: Folder[];
+  public renderer: IpcRenderer;
 
-  constructor() { }
+  constructor(electronServiceInstance: ElectronService) {
+    this.renderer = electronServiceInstance.ipcRenderer;
+  }
 
   ngOnInit(): void {
+  }
+
+  onExe(path: string): void {
+    this.renderer.send('startExe', path);
   }
 
 }
