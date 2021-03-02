@@ -7,6 +7,7 @@ const path = require('path')
 const url = require('url')
 const glob = require("glob");
 const fs = require("fs");
+const exec = require("child_process");
 
 let mainWindow
 let steamConfigPath = process.env.APPDATA + '/SoulExplorer/steamGames.config'

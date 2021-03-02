@@ -4,6 +4,10 @@ mat-sidenav-container {
 
 mat-sidenav {
   width: auto;
+  overflow: hidden;
+  padding-top: 3em;
+  height: calc(100vh - 4em);
+  position: fixed;
 }
 
 .buttonLabel {
