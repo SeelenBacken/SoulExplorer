@@ -7,7 +7,7 @@ const path = require('path')
 const url = require('url')
 const glob = require("glob");
 const fs = require("fs");
-const exec = require("child_process");
+const exec = require("child_process").execFile;
 
 let mainWindow
 let steamConfigPath = process.env.APPDATA + '/SoulExplorer/steamGames.config'
@@ -125,6 +125,14 @@ ipcMain.on('loadSteamLibraries', (event, args) => {
     let libraries = JSON.parse(configFile);
     event.sender.send('setSteamLibraries', libraries);
   }
+})
+
+ipcMain.on('startExe', (event, args) => {
+  console.log('Executing: ' + args);
+  let child = exec(args, function (err, data) {
+    console.log(err);
+    console.log(data.toString());
+  })
 })
 
 function checkSteamGame(game) {

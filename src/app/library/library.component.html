@@ -4,7 +4,7 @@
       <h3>{{game.name}}</h3>
       <ul>
         <li *ngFor="let exe of game.exes">
-          <button mat-button>{{exe.label}}</button>
+          <button mat-button (click)="onExe(exe.filePath)">{{exe.label}}</button>
         </li>
       </ul>
     </li>
